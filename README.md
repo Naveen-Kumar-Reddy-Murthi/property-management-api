@@ -2,7 +2,7 @@
 
 [![Actions](https://github.com/gothinkster/spring-boot-realworld-example-app/workflows/Java%20CI/badge.svg)](https://github.com/mnreddy7/property-management-api.git)
 
-> ### Spring boot + H2 DB containing real world examples (CRUD, auth and, etc)  
+> ### Spring boot + H2 DB containing real world examples (CRUD, auth, etc)  
 
 # Brief
 Develop a simple Spring boot based application with RESTful API support.
@@ -13,10 +13,11 @@ key which identifies a valid user in the system. Otherwise, the API will respond
 
 # Property Management APIs
 Property management APIs with the following functionality:
-1. Create property
-2. Update property
-3. Approve property
-4. Search property
+1. authenticate
+2. Create property
+3. Update property
+4. Approve property
+5. Search property
 
 # Libraries used
 1. Spring boot 
@@ -35,9 +36,31 @@ Integration with Spring Security and add other filter for jwt token process.
 
 The secret key is stored in `application.properties`.
 
+To access the api first, you need to authenticate in the application. You can do that by 
+using below post request with following hardcoded username and password. If the token expires, one
+need to hit the below endpoint again and get the token to access the api.
+`http://localhost:8080/pma/authenticate`
+
+Request:
+
+`{
+"username" : "jwtusername",
+"password" : "password"
+}
+`
+
+Response:
+
+`
+{
+"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqd3R1c2VybmFtZSIsImV4cCI6MTYxNzk2Mjc0MiwiaWF0IjoxNjE3OTQ0NzQyfQ.ImIabf448QChdr9PF8-gHue075i0UVqhE9HKxp9tmFhWJBAGO46YBEML9PDrYrxa6f9bPfyiGp6tDu8l9aHzEQ"
+}
+`
 # Database
 
 It uses a H2 in memory database (for now), can be changed easily in the `application.properties` for any other database.
+You can access the web console using following endpoint
+`http://localhost:8080/pma/h2`
 
 # Getting started
 
