@@ -5,6 +5,7 @@ import com.pma.service.PropertyService;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("api/v1/property")
 public class PropertyManagementController {
+	@Setter
 	@Autowired
 	private PropertyService propertyService;
 

@@ -1,2 +1,7 @@
 # Project exclude paths
 /target/
+/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_1_2_RELEASE.xml
+/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml
+/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_11.xml
+/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_10.xml
+/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_1_1_RELEASE.xml
