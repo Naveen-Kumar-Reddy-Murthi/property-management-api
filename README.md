@@ -66,6 +66,12 @@ You can access the web console using following endpoint
 
 You need Java 8 installed.
 
+# How to test
+Make sure you update the JWT token in the test file before running tests because
+it for running tests authentication is required. Otherwise, tests will fail
+
+mvn test
+
 # How to run
 mvn spring-boot:run
 
