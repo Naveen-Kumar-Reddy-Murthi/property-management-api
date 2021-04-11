@@ -34,7 +34,7 @@ public class PropertyManagementController {
 	@ApiOperation(value = "updates the property entry in the given JSON format",
 			notes = "Only propertyType, occupancyStatus fields can be updated",
 			response = ResponseEntity.class)
-	@PutMapping(value = "/update",produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/update",produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity update(@RequestBody PropertyDTO propertyDTO){
 		return propertyService.update(propertyDTO);
 	}
@@ -42,7 +42,7 @@ public class PropertyManagementController {
 	@ApiOperation(value = "Approves the property with given id to be listed",
 			notes = "A property once approved, cannot be disapproved",
 			response = ResponseEntity.class)
-	@PutMapping(value = "/approve/{propertyId}",produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/approve/{propertyId}",produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity approve(@PathVariable("propertyId") Long propertyId){
 		return propertyService.approve(propertyId);
 	}
